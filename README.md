@@ -2,6 +2,8 @@
 
 This project is a simple full-stack form submission app that allows users to input their **name** and **email**, which are then stored securely in a **MongoDB Atlas** database using an **Express.js backend**. The frontend is built with **Next.js**.
 
+---
+
 ## Tech Stack
 
 - **Frontend**: Next.js (React)
@@ -12,7 +14,7 @@ This project is a simple full-stack form submission app that allows users to inp
 
 ---
 
-## Run the development server:
+## Run the frontend development server:
 
 ```bash
 npm run dev
@@ -26,7 +28,7 @@ bun dev
 
 ---
 
-run frontend and backend concurrently: cd frontend
+## Running frontend and backend concurrently: cd frontend
 
 ```bash
 npm run dev
@@ -40,10 +42,36 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ---
 
-## backend:
+## Run backend: cd backend
+
+```bash
+node server.js
+```
+
+---
+
+Server running on (http://localhost:3001)
+
+---
+
+## Backend setup
 
 ```bash
 npm install express mongoose jsonwebtoken bcryptjs dotenv express-validator cors mongodb
 ```
 
-Server running on (http://localhost:3001)
+---
+
+## Frontend setup
+
+```bash
+npx create-next-app@latest my-next-app
+cd my-next-app
+npm install react react-dom next
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+npm install --save-dev typescript @types/react @types/node
+npm install --save-dev concurrently
+```
+
+---

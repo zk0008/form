@@ -1,6 +1,6 @@
 ## Form website (with MongoDB + Express + Next.js)
 
-This project is a simple full-stack form submission app that allows users to input their **name** and **email**, which are then stored securely in a **MongoDB Atlas** database using an **Express.js backend**. The frontend is built with **Next.js**.
+This project is a simple full-stack form submission app that allows users to input their **name** and **email**, which are then stored securely in a **MongoDB Atlas** database using an **Express.js backend**. The frontend is built with **Next.js (React)**.
 
 ---
 
@@ -32,7 +32,7 @@ bun dev
 
 ```bash
 npm run dev
-# or
+
 npm install concurrently --save-dev
 ```
 
@@ -50,7 +50,7 @@ node server.js
 
 ---
 
-Server running on (http://localhost:3001)
+Server running on http://localhost:3001
 
 ---
 

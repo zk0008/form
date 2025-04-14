@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import TipTotal from "./tip"; // adjust path if needed
 
 const Page: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -74,6 +75,20 @@ const Page: React.FC = () => {
   const [submissions, setSubmissions] = useState<
     { firstName: string; lastName: string; email: string }[]
   >([]);
+
+  const [tipInput, setTipInput] = useState("");
+  const [tips, setTips] = useState<number[]>([]);
+
+  const addTip = () => {
+    const parsedTip = parseFloat(tipInput);
+    if (!isNaN(parsedTip) && parsedTip > 0) {
+      setTips([...tips, parsedTip]);
+      setTipInput("");
+    }
+  };
+
+  const totalTips = tips.reduce((sum, tip) => sum + tip, 0);
+
   return (
     <div className="bg-gradient-to-b from-blue-800 to-purple-800 min-h-screen flex flex-col items-center justify-center">
       <div className="form-container bg-black p-10 mb-10 w-full max-w-md space-y-6 flex items-center justify-center rounded-2xl">
@@ -156,6 +171,40 @@ const Page: React.FC = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow-lg rounded-2xl">
+        <h2 className="text-2xl font-bold mb-4 text-center text-black">
+          💸 Tip Tracker
+        </h2>
+
+        <div className="flex gap-2 mb-4">
+          <input
+            type="number"
+            value={tipInput}
+            onChange={(e) => setTipInput(e.target.value)}
+            placeholder="Enter tip amount"
+            className="w-full px-4 py-2 text-black border rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+          />
+          <button
+            onClick={addTip}
+            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+          >
+            Add Tip
+          </button>
+        </div>
+        {tips.length > 0 && (
+          <>
+            <ul className="mb-4">
+              {tips.map((tip, index) => (
+                <li key={index} className="text-gray-700">
+                  Tip {index + 1}: ${tip.toFixed(2)}
+                </li>
+              ))}
+            </ul>
+
+            <TipTotal tips={tips} />
+          </>
+        )}
       </div>
     </div>
   );

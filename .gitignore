@@ -24,7 +24,7 @@ dist/
 # webpack and hot module replacement
 *.hot-update.js
 *.hot-update.json
-*.pack.gz
+*.pack.gz*
 webpack-stats.json
 webpack*.js
 webpack-runtime.js

@@ -30,6 +30,7 @@ webpack*.js
 webpack-runtime.js
 
 # trace and manifest files
+trace
 *.trace
 *.trace.json
 app-build-manifest.json

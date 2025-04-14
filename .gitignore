@@ -18,13 +18,16 @@ node_modules/
 /out/
 
 # production
-/build
+build/
+dist/
 
 # webpack and hot module replacement
 *.hot-update.js
 *.hot-update.json
 *.pack.gz
 webpack-stats.json
+webpack*.js
+webpack-runtime.js
 
 # trace and manifest files
 *.trace
@@ -73,3 +76,8 @@ private.key
 public.key
 cert.pem
 key.pem
+
+# Static build leftovers (if accidentally included)
+page.js
+layout.js
+layout.css

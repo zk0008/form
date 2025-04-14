@@ -20,6 +20,23 @@ node_modules/
 # production
 /build
 
+# webpack and hot module replacement
+*.hot-update.js
+*.hot-update.json
+*.pack.gz
+webpack-stats.json
+
+# trace and manifest files
+*.trace
+*.trace.json
+app-build-manifest.json
+build-manifest.json
+middleware-build-manifest.js
+
+# font files (optional: if generated)
+*.woff
+*.woff2
+
 # misc
 .DS_Store
 *.pem

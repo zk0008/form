@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import TipTotal from "./tip"; // adjust path if needed
+import TipTotal from "./tip";
 
 const Page: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -86,8 +86,6 @@ const Page: React.FC = () => {
       setTipInput("");
     }
   };
-
-  const totalTips = tips.reduce((sum, tip) => sum + tip, 0);
 
   return (
     <div className="bg-gradient-to-b from-blue-800 to-purple-800 min-h-screen flex flex-col items-center justify-center">
